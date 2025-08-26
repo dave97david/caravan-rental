@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caravan Rental in Israel</title>
+    <link rel="icon" type="image/png" href="photos/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleHome.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+        <div class="container">
+          <span class="navbar-brand">
+            <img src="photos/logo.jpg" alt="Logo">
+          </span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="homePage.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="booking.html">Booking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactUs.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forms.html">Forms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main style="margin-top: 2em;">
+      <section id="banner" style="font-family:fantasy;">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 style="color: blue; border-bottom: 2px solid black;">Explore Israel in Style</h1>
+              <p>Welcome to our caravan rental site in Israel! Israel is a land of great natural beauty and ancient history, 
+                a place where the old and the new coexist in perfect harmony.</p>
+              <p>From the Mediterranean coast to the Red Sea, from the green hills of the Galilee to the stark desert of the Negev, 
+                Israel is a country of stunning landscapes that are waiting for you to explore. 
+                And there's no better way to experience this beautiful country than by renting a caravan.</p>
+              <p style="margin-bottom: 4em;"> With a caravan, you can travel at your own pace, stop wherever you want, and wake up to a new and breathtaking view every morning. 
+                So why not embark on a journey of discovery with us and see all that Israel has to offer?</p>
+              <p style="font-size: larger;border-bottom: 2px solid black;">Here is a glimpse of the sites you might want to visit in Israel:</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<section id="photos-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal1">
+              <img src="photos/photo1.jpg" class="card-img-top" alt="Bahai gardens">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Bahai gardens</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal2">
+              <img src="photos/photo2.jpg" class="card-img-top" alt="Dome of the Rock">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Dome of the Rock</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal3">
+              <img src="photos/photo3.jpg" class="card-img-top" alt="Western Wall">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Western Wall</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal4">
+              <img src="photos/photo4.jpg" class="card-img-top" alt="Via Dolorosa">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Via Dolorosa</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal5">
+              <img src="photos/photo5.jpg" class="card-img-top" alt="Dead Sea">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Dead Sea</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="card">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#photoModal6">
+              <img src="photos/photo6.jpg" class="card-img-top" alt="Sea of Galilee">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Sea of Galilee</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 1 -->
+  <div class="modal fade" id="photoModal1" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel1">Bahai gardens</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo1.jpg" class="card-img-top" alt="Bahai gardens">
+            <div class="card-body">
+              <h5 class="card-title">Why Bahai gardens?</h5>
+              <p class="card-text"> 
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    Immerse yourself in the beauty of the Bahai Gardens while enjoying the convenience 
+                    of renting a caravan near this stunning landmark. 
+                    The Bahai Gardens, located in the city of Haifa, Israel, 
+                    are a magnificent terraced garden complex 
+                    that showcase exquisite landscaping and breathtaking views of the surrounding area.
+                  </p>
+                  <p>
+                    By renting a caravan near the Bahai Gardens, you can have the unique opportunity to wake up to the sight 
+                    of these splendid gardens right at your doorstep. 
+                    Imagine starting your day with a leisurely stroll through the tranquil pathways, 
+                    surrounded by lush greenery and vibrant flowers. 
+                    The peaceful ambiance of the gardens provides the perfect setting to relax and 
+                    rejuvenate before embarking on your exploration of the city.
+                  </p>
+                  <p>
+                    With a caravan rental, you have the flexibility to stay in close proximity to the Bahai Gardens, 
+                    allowing you to fully immerse yourself in its beauty and spend more time exploring the intricate terraces, 
+                    fountains, and meticulously manicured lawns. 
+                    Whether you choose to visit the gardens during the day or witness the stunning illuminated view 
+                    at night, having a caravan nearby offers convenience and comfort throughout your stay.
+                  </p>
+                  <p>
+                    Additionally, staying in a caravan provides you with the freedom to customize your itinerary. 
+                    You can easily plan day trips to other nearby attractions, 
+                    such as the vibrant Carmel Market or the historic port city of Akko, 
+                    and return to your cozy caravan retreat in the evenings. 
+                    It offers a unique blend of mobility and comfort, 
+                    allowing you to experience the Bahai Gardens and its surroundings at your own pace.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="photoModal2" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel2">Dome of the Rock</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo2.jpg" class="card-img-top" alt="Dome of the Rock">
+            <div class="card-body">
+              <h5 class="card-title">Why Dome of the Rock?</h5>
+              <p class="card-text">
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    Experience the awe-inspiring beauty and historical significance of the Dome of the Rock while enjoying the convenience of renting a caravan near this iconic landmark. The Dome of the Rock, located on the Temple Mount in the Old City of Jerusalem, is a masterpiece of Islamic architecture and holds great religious importance. Its stunning golden dome and intricate mosaics attract visitors from around the world.
+                  </p>
+                  <p>
+                    By renting a caravan near the Dome of the Rock, you can immerse yourself in the rich cultural heritage of the area and explore the fascinating history of Jerusalem at your own pace. Imagine waking up to the sight of this architectural marvel, with its radiant dome glistening in the sunlight. You can easily access the site and spend time marveling at the intricate details of the structure, including the stunning mosaics and inscriptions.
+                  </p>
+                  <p>
+                    Staying in a caravan near the Dome of the Rock provides you with the flexibility to visit other nearby attractions, such as the Western Wall, the Church of the Holy Sepulchre, and the vibrant markets of the Old City. You can also plan day trips to explore the wider region, including the ancient city of Bethlehem or the serene landscapes of the Dead Sea. The convenience of having a caravan nearby allows you to fully immerse yourself in the history and spirituality of Jerusalem while enjoying the comforts of your own mobile retreat.
+                  </p>
+                  <p>
+                    Caravans offer a unique travel experience, combining the freedom of mobility with the comforts of a cozy home. You can customize your itinerary and explore the surrounding areas, all while having a comfortable and convenient accommodation option. Renting a caravan near the Dome of the Rock is an excellent choice for travelers seeking an immersive and flexible way to experience this iconic landmark and the cultural richness of Jerusalem.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="photoModal3" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel3" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel3">Western Wall</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo3.jpg" class="card-img-top" alt="Western Wall">
+            <div class="card-body">
+              <h5 class="card-title">Why Western Wall?</h5>
+              <p class="card-text">
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    Experience the profound spiritual significance of the Western Wall, also known as the Wailing Wall, while enjoying the convenience of renting a caravan near this revered site. The Western Wall is a remnant of the ancient Jewish temple complex and is considered one of the holiest places in Judaism. It is a site of prayer, reflection, and connection for people of all faiths.
+                  </p>
+                  <p>
+                    By renting a caravan near the Western Wall, you can have the unique opportunity to immerse yourself in the spiritual atmosphere of this sacred place. Imagine being just a few steps away from the Western Wall, where you can participate in prayer services, observe traditional rituals, and connect with the rich history and heritage of Jerusalem. You can witness the deep devotion of people from around the world as they place their handwritten prayers in the crevices of the ancient stones.
+                  </p>
+                  <p>
+                    Staying in a caravan near the Western Wall provides you with the freedom to explore the surrounding area at your own pace. You can take leisurely walks through the narrow streets of the Old City, visit the bustling markets, and discover other significant religious and historical sites nearby, such as the Church of the Holy Sepulchre and the Dome of the Rock. Having a caravan as your base allows you to fully immerse yourself in the spiritual and cultural richness of Jerusalem.
+                  </p>
+                  <p>
+                    Caravans offer a comfortable and convenient accommodation option for travelers seeking a deeper connection to the Western Wall and the spiritual essence of Jerusalem. With a caravan rental, you have the flexibility to plan your itinerary and explore other parts of the city or even venture out to other destinations in Israel. It provides a unique blend of mobility, comfort, and proximity to the Western Wall, allowing you to create a truly meaningful and personalized travel experience.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="photoModal4" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel4" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel4">Via Dolorosa</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo4.jpg" class="card-img-top" alt="Via Dolorosa">
+            <div class="card-body">
+              <h5 class="card-title">Why Via Dolorosa?</h5>
+              <p class="card-text">
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    Follow in the footsteps of Jesus along the Via Dolorosa, the path believed to be the route He walked on His way to crucifixion. Renting a caravan near the Via Dolorosa allows you to experience the profound spiritual journey and immerse yourself in the historical significance of this sacred route. It is a pilgrimage that offers reflection, prayer, and connection for Christians from around the world.
+                  </p>
+                  <p>
+                    By renting a caravan near the Via Dolorosa, you have the unique opportunity to explore the various stations along the route at your own pace. As you walk through the narrow streets of Jerusalem's Old City, you can visit each station and reflect on the events that took place on this path. From the place of Jesus' condemnation to the site of His crucifixion and burial, every step along the Via Dolorosa holds deep meaning and significance.
+                  </p>
+                  <p>
+                    Staying in a caravan near the Via Dolorosa provides you with the flexibility to engage in prayer, meditation, and spiritual contemplation along the route. You can pause at each station, take time for personal reflection, and connect with the profound journey of Jesus. Additionally, having a caravan as your base allows you to explore other notable Christian sites in Jerusalem, such as the Church of the Holy Sepulchre and the Garden Tomb.
+                  </p>
+                  <p>
+                    Caravans offer a comfortable and convenient accommodation option for travelers seeking a deeper connection to the Via Dolorosa and the spiritual essence of Jerusalem. With a caravan rental, you have the freedom to plan your itinerary and explore other parts of the city or even venture out to other significant biblical sites in Israel. It provides a unique blend of mobility, comfort, and proximity to the Via Dolorosa, allowing you to embark on a meaningful and transformative pilgrimage experience.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="photoModal5" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel5" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel5">Dead Sea</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo5.jpg" class="card-img-top" alt="Dead Sea">
+            <div class="card-body">
+              <h5 class="card-title">Why visit the Dead Sea?</h5>
+              <p class="card-text">
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    The Dead Sea is a remarkable natural wonder that attracts visitors from around the world. Renting a caravan near the Dead Sea provides you with a unique opportunity to experience its mesmerizing beauty and therapeutic properties at your own pace. Located between Jordan and Israel, this saltwater lake is famous for its high salinity, which allows visitors to effortlessly float on its surface.
+                  </p>
+                  <p>
+                    By renting a caravan near the Dead Sea, you can enjoy the convenience of having easy access to the lake's shores. Imagine waking up to the stunning views of the turquoise waters and the surrounding desert landscape. You can spend your days floating in the mineral-rich waters, known for their healing properties, and indulging in natural mud baths that leave your skin feeling rejuvenated.
+                  </p>
+                  <p>
+                    Staying in a caravan near the Dead Sea also allows you to explore the nearby attractions and activities. You can visit the Ein Gedi Nature Reserve, home to lush oases, stunning waterfalls, and diverse wildlife. The ancient fortress of Masada is another must-visit site in the area, offering a glimpse into the region's rich history. Additionally, the Dead Sea is a popular destination for wellness and spa retreats, where you can pamper yourself with luxurious treatments and massages.
+                  </p>
+                  <p>
+                    Caravans provide a comfortable and flexible accommodation option for your visit to the Dead Sea. You can enjoy the freedom to plan your itinerary, explore the region at your own pace, and create a personalized experience. Whether you're seeking relaxation, natural beauty, or cultural exploration, renting a caravan near the Dead Sea ensures a memorable and rejuvenating getaway.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="photoModal6" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel6" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoModalLabel6">Sea of Galilee</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <img src="photos/photo6.jpg" class="card-img-top" alt="Sea of Galilee">
+            <div class="card-body">
+              <h5 class="card-title">Exploring the Sea of Galilee</h5>
+              <p class="card-text">
+                <span style="font-weight:400; color: black;">
+                  <p>
+                    The Sea of Galilee, also known as Lake Kinneret, is a place of great historical and spiritual significance. Renting a caravan near the Sea of Galilee allows you to immerse yourself in the biblical landscapes, explore ancient sites, and experience the serene beauty of this freshwater lake.
+                  </p>
+                  <p>
+                    By staying in a caravan near the Sea of Galilee, you can wake up to breathtaking views of the lake and its surrounding hills. You have the freedom to explore the region's rich cultural heritage, visit biblical sites such as Capernaum, Tabgha, and the Mount of Beatitudes, and discover the ancient fishing villages that dot the shoreline.
+                  </p>
+                  <p>
+                    The Sea of Galilee is not only a place of historical significance but also offers a variety of recreational activities. You can enjoy boat rides on the lake, try your hand at fishing, or simply relax on the tranquil beaches. The area is also known for its scenic hiking trails, allowing you to explore the lush landscapes and enjoy panoramic views.
+                  </p>
+                  <p>
+                    Caravan rentals near the Sea of Galilee provide a comfortable and convenient base for your explorations. You can plan your own itinerary, visit the sites that interest you the most, and have the flexibility to immerse yourself in the rich history and natural beauty of the region. Whether you're a history enthusiast, a nature lover, or a spiritual seeker, the Sea of Galilee offers a captivating experience that will leave you with lasting memories.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+      <section id="banner" style="font-family:fantasy;">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 style="color: blue; border-bottom: 2px solid black; margin-top: 2em;">About our caravans</h1>
+              <p>We offer a wide range of caravans to cater to different needs and group sizes</p>
+              <p>For couples looking for an affordable option, 
+                we have our two-bed caravan that is perfect for a romantic getaway. 
+                It comes equipped with all the basic amenities, ensuring a comfortable stay for our guests.</p>
+              <p>Families or groups of friends who are looking for a bit more space can opt for our four-bed caravan. 
+                It has a larger living area and additional sleeping space, 
+                making it an ideal choice for those who prefer more room to move around.</p>
+              <p>For larger families or groups, we have our six-bed caravan, which offers ample space for everyone to relax and unwind. 
+                Finally, for bigger groups or parties, we have our eight-bed caravan that can comfortably accommodate everyone.</p>
+              <p style="margin-bottom: 4em;">Each caravan is thoughtfully designed to provide our guests with a comfortable and enjoyable experience, 
+                and we take pride in maintaining them to the highest standards. Check out the photos of our caravans below and take your pick!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<section id="photos-b" style="margin-bottom: 4em;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#caravanModal1">
+                <img src="photos/caravan-2-seats.jpg" class="card-img-top img-fluid" alt="Caravan with 2 beds">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Caravan with 2 beds</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#caravanModal2">
+                <img src="photos/4-seats.jpg" class="card-img-top img-fluid" alt="Caravan with 4 beds">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Caravan with 4 beds</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#caravanModal3">
+                <img src="photos/6-seats.jpg" class="card-img-top img-fluid" alt="Caravan with 6 beds">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Caravan with 6 beds</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#caravanModal4">
+                <img src="photos/8-seats.jpg" class="card-img-top img-fluid" alt="Caravan with 8 beds">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Caravan with 8 beds</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="caravanModal1" tabindex="-1" role="dialog" aria-labelledby="caravanModalLabel1" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 700px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="caravanModalLabel1">Caravan with 2 beds</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img src="photos/caravan-2-seats.jpg" class="card-img-top" alt="Caravan with 2 beds">
+              <div class="card-body">
+                <h5 class="card-title">Compact and Cozy Accommodation</h5>
+                <p class="card-text">
+                  The 2-passenger caravan is a compact and cozy accommodation option perfect for couples or solo travelers seeking a comfortable and convenient travel experience. This thoughtfully designed caravan is equipped with all the essential amenities to ensure a pleasant stay. Step inside and you'll find a cozy sleeping area with a comfortable bed, storage space for your belongings, and a small seating area where you can relax and unwind after a day of adventures.
+                </p>
+                <h5 class="card-title">Efficient Use of Space</h5>
+                <p class="card-text">
+                  Despite its compact size, the 2-passenger caravan makes efficient use of every inch of space. The interior is cleverly designed to maximize functionality and comfort. You'll find a compact kitchenette equipped with a stove, sink, and refrigerator, allowing you to prepare your own meals on the go. There's also a compact bathroom area with a toilet, shower, and sink, providing you with the convenience of a private bathroom wherever you travel.
+                </p>
+                <h5 class="card-title">Flexibility and Freedom</h5>
+                <p class="card-text">
+                  Renting a 2-passenger caravan offers you the flexibility and freedom to explore different destinations at your own pace. With your accommodation on wheels, you have the freedom to travel wherever your heart desires, be it picturesque countryside landscapes, serene coastal areas, or vibrant city centers. You can easily hop from one destination to another, discovering hidden gems along the way, and changing your plans as you please. The compact size of the caravan also makes it easier to navigate narrow roads and find parking spaces in crowded areas.
+                </p>
+                <h5 class="card-title">Immersive Travel Experience</h5>
+                <p class="card-text">
+                  Traveling in a 2-passenger caravan allows you to have an immersive travel experience like no other. Wake up to breathtaking views right outside your doorstep, enjoy your morning coffee amidst nature, and embark on exciting adventures whenever you please. Whether you're exploring national parks, visiting charming towns, or discovering off-the-beaten-path attractions, the caravan provides a comfortable and convenient base for your journey. It's a home away from home, where you can create lasting memories and embrace the freedom of the open road.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="caravanModal2" tabindex="-1" role="dialog" aria-labelledby="caravanModalLabel2" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 700px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="caravanModalLabel2">Caravan with 4 beds</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img src="photos/4-seats.jpg" class="card-img-top" alt="Caravan with 4 beds">
+              <div class="card-body">
+                <h5 class="card-title">Cozy Retreat for a Family</h5>
+                <p class="card-text">Escape to a cozy retreat with our caravan designed for 4 passengers. The caravan features two comfortable bedrooms, allowing your family to enjoy a restful sleep during your adventures. The well-equipped kitchenette provides convenience for preparing meals on the go. Gather around the dining area to savor delicious food and create lasting memories together. Whether you're embarking on a road trip or exploring the great outdoors, our caravan with 4 beds offers a comfortable and enjoyable experience for your family.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="caravanModal3" tabindex="-1" role="dialog" aria-labelledby="caravanModalLabel3" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 700px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="caravanModalLabel3">Caravan with 6 beds</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img src="photos/6-seats.jpg" class="card-img-top" alt="Caravan with 6 beds">
+              <div class="card-body">
+                <h5 class="card-title">Group Adventure on Wheels</h5>
+                <p class="card-text">Embark on a thrilling group adventure with our spacious caravan designed for 6 passengers. The caravan boasts three comfortable bedrooms, ensuring ample space for everyone to relax and unwind. The well-appointed kitchen allows you to prepare delicious meals during your journeys. Gather in the cozy dining area to share stories and enjoy delightful feasts together. With its ample living space and modern amenities, our caravan with 6 beds offers a perfect accommodation option for your group expedition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="caravanModal4" tabindex="-1" role="dialog" aria-labelledby="caravanModalLabel4" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 700px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="caravanModalLabel4">Caravan with 8 beds</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img src="photos/8-seats.jpg" class="card-img-top" alt="Caravan with 8 beds">
+              <div class="card-body">
+                <h5 class="card-title">Luxurious Getaway for a Large Group</h5>
+                <p class="card-text">Indulge in a luxurious getaway with our caravan designed for 8 passengers. This spacious caravan features four well-appointed bedrooms, ensuring everyone has their own private retreat. The fully equipped kitchen allows you to prepare gourmet meals during your travels. Gather in the stylish living room area to relax and socialize. With multiple bathrooms, modern amenities, and ample space, our caravan with 8 beds offers a premium experience for your large group getaway.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+
+      <section id="banner" style="font-family:fantasy; text-align: center; margin-bottom: 6em;">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2 style="color: blue; border-bottom: 2px solid black; ">Start Your Adventure Today</h2>
+              <p>Ready to start your adventure in Israel? Book a caravan with us now and experience the freedom and beauty of this amazing country.</p>
+              <a class="btn btn-primary" href="booking.html">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer style="text-align: center; padding: 2em; background-color: rgb(137, 173, 157); color: white;">
+      <p>© 2023 Caravan Rental in Israel. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

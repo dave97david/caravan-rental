@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Test Contact Us Page</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container text-center">
+    <h1>API Test Page for Contact Us</h1>
+
+    <!-- Get All Contact Forms Button -->
+    <button id="getAllContactFormsButton" class="btn btn-primary">Get All Contact Forms</button>
+    <div class="alert alert-warning mt-3" id="getAllContactFormsAlert" style="display: none;">
+      No contact forms found in the database.
+    </div>
+
+    <!-- Update Contact Form Button -->
+    <button id="updateContactFormButton" class="btn btn-success" data-toggle="modal" data-target="#updateContactFormModal">Update Contact Form</button>
+    <div class="modal fade" id="updateContactFormModal" tabindex="-1" role="dialog" aria-labelledby="updateContactFormModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateContactFormModalLabel">Update Contact Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="updateContactFormId" class="form-control mb-2" placeholder="Contact Form ID">
+            <input type="text" id="updateContactFormName" class="form-control mb-2" placeholder="New Name">
+            <input type="text" id="updateContactFormPhone" class="form-control mb-2" placeholder="New Phone">
+            <input type="text" id="updateContactFormEmail" class="form-control mb-2" placeholder="New Email">
+            <input type="text" id="updateContactFormMessage" class="form-control mb-2" placeholder="New Message">
+            <div class="alert alert-warning mt-2" id="updateContactFormAlert" style="display: none;">
+              Please fill in the Contact Form ID and at least one other field.
+            </div>
+            <div class="alert alert-danger mt-2" id="updateContactFormErrorAlert" style="display: none;">
+              Contact Form not found in the database.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="updateContactFormSubmit" type="button" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Contact Form Button -->
+    <button id="deleteContactFormButton" class="btn btn-danger" data-toggle="modal" data-target="#deleteContactFormModal">Delete Contact Form</button>
+    <div class="modal fade" id="deleteContactFormModal" tabindex="-1" role="dialog" aria-labelledby="deleteContactFormModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteContactFormModalLabel">Delete Contact Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="deleteContactFormId" class="form-control mb-2" placeholder="Contact Form ID">
+            <div class="alert alert-danger mt-2" id="deleteContactFormErrorAlert" style="display: none;">
+              Contact Form not found in the database.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="deleteContactFormSubmit" type="button" class="btn btn-primary">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contactFormsList"></div>
+  </div>
+
+  <script>
+    // Function to show an alert
+    function showAlert(alertId) {
+      $(alertId).show();
+      setTimeout(function() {
+        $(alertId).hide();
+      }, 3000);
+    }
+
+    // Function to make a GET request to fetch all contact forms
+    $("#getAllContactFormsButton").click(function() {
+      $.ajax({
+        url: "http://127.0.0.1:3000/api/contactUs",
+        method: "GET",
+        success: function(data) {
+          if (data.length === 0) {
+            showAlert("#getAllContactFormsAlert");
+          } else {
+            $("#contactFormsList").html("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
+          }
+        },
+        error: function(error) {
+          console.error("Error:", error);
+        }
+      });
+    });
+
+    // Function to make a PUT request to update a contact form
+    $("#updateContactFormSubmit").click(function() {
+      const contactFormId = $("#updateContactFormId").val();
+      const newName = $("#updateContactFormName").val();
+      const newPhone = $("#updateContactFormPhone").val();
+      const newEmail = $("#updateContactFormEmail").val();
+      const newMessage = $("#updateContactFormMessage").val();
+
+      if (!contactFormId || (!newName && !newPhone && !newEmail && !newMessage)) {
+        showAlert("#updateContactFormAlert");
+        return;
+      }
+
+      $.ajax({
+        url: `http://127.0.0.1:3000/api/contactUs/${contactFormId}`,
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify({
+          nameC: newName,
+          phone: newPhone,
+          email: newEmail,
+          message: newMessage
+        }),
+        success: function(data) {
+          console.log("Updated Contact Form:", data);
+          $("#updateContactFormModal").modal("hide");
+        },
+        error: function(error) {
+          console.error("Error:", error);
+          showAlert("#updateContactFormErrorAlert");
+        }
+      });
+    });
+
+    // Function to make a DELETE request to delete a contact form
+    $("#deleteContactFormSubmit").click(function() {
+      const contactFormId = $("#deleteContactFormId").val();
+
+      if (!contactFormId) {
+        showAlert("#deleteContactFormErrorAlert");
+        return;
+      }
+
+      $.ajax({
+        url: `http://127.0.0.1:3000/api/contactUs/${contactFormId}`,
+        method: "DELETE",
+        success: function() {
+          console.log("Contact Form deleted successfully.");
+          $("#deleteContactFormModal").modal("hide");
+        },
+        error: function(error) {
+          console.error("Error:", error);
+          showAlert("#deleteContactFormErrorAlert");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API BookingPage</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container text-center">
+    <h1>API BookingPage</h1>
+
+    <!-- Get All Caravans Button -->
+    <button id="getAllCaravansButton" class="btn btn-primary">Get All Caravans</button>
+    <div class="alert alert-warning mt-3" id="getAllCaravansAlert" style="display: none;">
+      No caravans found in the database.
+    </div>
+
+    <!-- Update Caravan Button -->
+    <button id="updateCaravanButton" class="btn btn-success" data-toggle="modal" data-target="#updateCaravanModal">Update Caravan</button>
+    <div class="modal fade" id="updateCaravanModal" tabindex="-1" role="dialog" aria-labelledby="updateCaravanModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateCaravanModalLabel">Update Caravan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="caravanId" class="form-control mb-2" placeholder="Caravan ID">
+            <input type="text" id="newCaravanTitle" class="form-control mb-2" placeholder="New Title">
+            <input type="text" id="newCaravanPrice" class="form-control mb-2" placeholder="New Price">
+            <input type="text" id="newCaravanLocation" class="form-control mb-2" placeholder="New Location">
+            <div class="alert alert-warning mt-2" id="updateCaravanAlert" style="display: none;">
+              Please fill in the Caravan ID and at least one other field.
+            </div>
+            <div class="alert alert-danger mt-2" id="updateCaravanErrorAlert" style="display: none;">
+              Caravan not found in the database.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="updateCaravanSubmit" type="button" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Caravan Button -->
+    <button id="deleteCaravanButton" class="btn btn-danger" data-toggle="modal" data-target="#deleteCaravanModal">Delete Caravan</button>
+    <div class="modal fade" id="deleteCaravanModal" tabindex="-1" role="dialog" aria-labelledby="deleteCaravanModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteCaravanModalLabel">Delete Caravan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="deleteCaravanId" class="form-control mb-2" placeholder="Caravan ID">
+            <div class="alert alert-danger mt-2" id="deleteCaravanErrorAlert" style="display: none;">
+              Caravan not found in the database.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="deleteCaravanSubmit" type="button" class="btn btn-primary">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="caravansList"></div>
+  </div>
+
+  <script>
+    // Function to show an alert
+    function showAlert(alertId) {
+      $(alertId).show();
+      setTimeout(function() {
+        $(alertId).hide();
+      }, 3000);
+    }
+
+    // Function to make a GET request to fetch all caravans
+    $("#getAllCaravansButton").click(function() {
+      $.ajax({
+        url: "http://127.0.0.1:3000/api/caravans",
+        method: "GET",
+        success: function(data) {
+          if (data.length === 0) {
+            showAlert("#getAllCaravansAlert");
+          } else {
+            $("#caravansList").html("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
+          }
+        },
+        error: function(error) {
+          console.error("Error:", error);
+        }
+      });
+    });
+
+    // Function to make a PUT request to update a caravan
+    $("#updateCaravanSubmit").click(function() {
+      const caravanId = $("#caravanId").val();
+      const newTitle = $("#newCaravanTitle").val();
+      const newPrice = $("#newCaravanPrice").val();
+      const newLocation = $("#newCaravanLocation").val();
+
+      if (!caravanId || (!newTitle && !newPrice && !newLocation)) {
+        showAlert("#updateCaravanAlert");
+        return;
+      }
+
+      $.ajax({
+        url: `http://127.0.0.1:3000/api/caravans/${caravanId}`,
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify({
+          title: newTitle,
+          price: newPrice,
+          location: newLocation
+        }),
+        success: function(data) {
+          console.log("Updated Caravan:", data);
+          $("#updateCaravanModal").modal("hide");
+        },
+        error: function(error) {
+          console.error("Error:", error);
+          showAlert("#updateCaravanErrorAlert");
+        }
+      });
+    });
+
+    // Function to make a DELETE request to delete a caravan
+    $("#deleteCaravanSubmit").click(function() {
+      const caravanId = $("#deleteCaravanId").val();
+
+      if (!caravanId) {
+        showAlert("#deleteCaravanErrorAlert");
+        return;
+      }
+
+      $.ajax({
+        url: `http://127.0.0.1:3000/api/caravans/${caravanId}`,
+        method: "DELETE",
+        success: function() {
+          console.log("Caravan deleted successfully.");
+          $("#deleteCaravanModal").modal("hide");
+        },
+        error: function(error) {
+          console.error("Error:", error);
+          showAlert("#deleteCaravanErrorAlert");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
