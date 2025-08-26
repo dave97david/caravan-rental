@@ -1,0 +1,28 @@
+.navbar-brand img {
+  width: 70px;
+  }
+
+  #caravansRow .card {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  }
+
+  .modal-dialog {
+    max-width: 700px; 
+  }
+
+  .modal-dialog.modal-lg {
+    max-width: 90%;
+    margin: 1.75rem auto;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    }
+
+

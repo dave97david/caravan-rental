@@ -1,0 +1,8 @@
+.navbar-brand img {
+  width: 70px;
+  }
+
+  .container .row .card{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    margin-top: 0.5em;
+  }
